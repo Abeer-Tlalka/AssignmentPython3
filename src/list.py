@@ -44,6 +44,10 @@ def find_unique_elements(lst1, lst2):
     for i in lst1:
         if i not in lst2:
             result.append(i)
+     # Check elements in lst2 that are not in lst1
+    for i in lst2:
+        if i not in lst1 and i not in result:  # Check if it's not already in result
+            result.append(i)
     return result 
 
 # 5. Write a Python program to flatten a nested list.
