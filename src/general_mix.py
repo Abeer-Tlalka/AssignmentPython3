@@ -35,6 +35,21 @@ def count_frequency(lst):
 
 
 # 4. Write a Python program to generate all subsets of a given set.
+def generate_subsets(input_set):
+    '''
+    Function to generate all subsets of a given set
+    :param input_set: A set (or list) from which subsets are generated
+    :return: A list of all subsets
+    '''
+    result = [[]]  # Start with the empty subset
+    for element in input_set:
+        # Create new subsets by adding the element to each existing subset
+        new_subsets = []
+        for subset in result:
+            new_subsets.append(subset + [element])  # Add the current element to each subset
+        result.extend(new_subsets)  # Add new subsets to the result
+    
+    return result
 
 # 5. Implement a program to find the most common element in a list.
 def find_most_common(lst):
